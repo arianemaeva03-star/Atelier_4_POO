@@ -28,6 +28,16 @@ class Employe:
         self.voitureService== None
         Voiture.chauffeur = None
         print(f"la Voiture de service peut sortir")
+    class Voiture:
+        def __init__(self, matricule, annee, marque, kilometrage,chauffeur):
+            self.matricule = matricule
+            self.annee = annee
+            self.marque = marque
+            self.kilometrage = kilometrage
+            self.chauffeur = None
+
+
+
 
 
 
