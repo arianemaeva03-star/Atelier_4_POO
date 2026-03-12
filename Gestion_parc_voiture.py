@@ -5,10 +5,10 @@ class Employe:
         self.prenom = prenom
         self.voitureService=None
     def afficherInformations(self):
-        print(f"Employe: {self.numeropermis} {self.nom} {self.prenom} {self.voitureService}")
+        print(f"Employe: {self.numeropermis} {self.nom} {self.prenom} ")
         if self.voitureService:
-            print(f"voiture service attribue")
             self.voitureService.afficherInformations()
+            print(f"voiture service attribue")
         else:
             print(f"voiture pas attribuee")
     def affecterVoitureService(self, voitureService):
@@ -20,5 +20,16 @@ class Employe:
         self.voitureService = voitureService
         Voiture.chauffeur = self
         print(f"voiture de service attribue")
+    def retirerVoitureService(self, voitureService):
+        if self.voitureService == None:
+            print(f"l'employe n'a pas de voiture de service")
+            return
+        self.voitureService = voitureService
+        self.voitureService== None
+        Voiture.chauffeur = None
+        print(f"la Voiture de service peut sortir")
+
+
+
 
 
