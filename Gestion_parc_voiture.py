@@ -43,14 +43,16 @@ class Employe:
         print(f"la Voiture de service peut sortir")
 e1=Employe("NP542368", "Diffo", "Maeva")
 e2=Employe("NP365842", "Tsafack", "Ariane")
+e3=Employe("P974565", "Kabore", "Alexia")
 
 v1=Voiture("ACQ145", "2010", "Toyota", "100000k")
 v2=Voiture("PGE148", "2019", "Mercedes", "120000k")
 e1.affecterVoitureService(v1)
 e2.affecterVoitureService(v2)
+e3.affecterVoitureService(v1)
 e1.afficherInformations()
 e2.afficherInformations()
-e1.retirerVoitureService(v1)
+e1.retirerVoitureService(e3)
 e1.afficherInformations()
 
 
