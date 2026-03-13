@@ -1,5 +1,5 @@
 class Voiture:
-    def __init__(self, matricule, annee, marque, kilometrage, chauffeur):
+    def __init__(self, matricule, annee, marque, kilometrage):
         self.matricule = matricule
         self.annee = annee
         self.marque = marque
@@ -8,7 +8,7 @@ class Voiture:
     def afficherInformations(self):
         print(f"Employe: {self.matricule} {self.annee} {self.marque} {self.kilometrage} ")
         if self.chauffeur :
-            print(f"chauffeur:{self.chauffeur}")
+            print(f"chauffeur:{self.chauffeur.nom}")
         else:
             print(f"aucun chauffeur")
 class Employe:
@@ -24,13 +24,13 @@ class Employe:
             print(f"voiture service attribue")
         else:
             print(f"voiture pas attribuee")
-    def affecterVoitureService(self, voitureService):
-        if self.voitureService != None:
+    def affecterVoitureService(self, VoitureService):
+        if VoitureService != None:
             print(f"l'employe a deja une voiture de service")
             return
-        if Voiture.chauffeur != None:
+        if (VoitureService!= None):
            print(f"la voiture est deja attribue")
-        self.voitureService = voitureService
+        self.voitureService = VoitureService
         Voiture.chauffeur = self
         print(f"voiture de service attribue")
     def retirerVoitureService(self, voitureService):
@@ -41,6 +41,18 @@ class Employe:
         self.voitureService == None
         self.VoitureVoiture.chauffeur = None
         print(f"la Voiture de service peut sortir")
+e1=Employe("NP542368", "Diffo", "Maeva")
+e2=Employe("NP365842", "Tsafack", "Ariane")
+
+v1=Voiture("ACQ145", "2010", "Toyota", "100000k")
+v2=Voiture("PGE148", "2019", "Mercedes", "120000k")
+e1.affecterVoitureService(v1)
+e2.affecterVoitureService(v2)
+e1.afficherInformations()
+e2.afficherInformations()
+e1.retirerVoitureService(v1)
+e1.afficherInformations()
+
 
 
 
